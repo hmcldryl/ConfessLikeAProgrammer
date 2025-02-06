@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ConfessLikeAProgrammer v1.0.0 ❤️</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: #1a1a1a;
+        color: #f0f0f0;
+        font-family: "Consolas", monospace;
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+      }
+
+      .title-bar {
+        background: linear-gradient(to right, #2b2b2b, #1f1f1f);
+        padding: 8px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        user-select: none;
+        border-bottom: 1px solid #333;
+      }
+
+      .title-left {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding-left: 10px;
+      }
+
+      .window-icon {
+        width: 16px;
+        height: 16px;
+        color: #7cb4b8;
+      }
+
+      .window-title {
+        color: #d4d4d4;
+        font-size: 14px;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      .window-controls {
+        display: flex;
+        gap: 2px;
+      }
+
+      .control-button {
+        width: 45px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: transparent;
+        border: none;
+        color: #d4d4d4;
+        cursor: pointer;
+        transition: background-color 0.2s;
+      }
+
+      .control-button:hover {
+        background-color: #3f3f3f;
+      }
+
+      .control-button.close:hover {
+        background-color: #c42b1c;
+      }
+
+      .terminal-content {
+        flex-grow: 1;
+        padding: 20px;
+        overflow-y: auto;
+        background-color: #0c0c0c;
+      }
+
+      #terminal {
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        line-height: 1.4;
+      }
+
+      .system-text {
+        color: #7cb4b8;
+      }
+
+      .path-text {
+        color: #fec456;
+      }
+
+      .comment {
+        color: #608b4e;
+      }
+
+      .code-block {
+        color: #b4cef8;
+      }
+
+      .message-text {
+        color: #d4d4d4;
+      }
+
+      .loading-text {
+        color: #87ceeb;
+      }
+
+      .error-text {
+        color: #f85149;
+      }
+
+      .heart-text {
+        color: #ff69b4;
+      }
+
+      #input-line {
+        display: flex;
+        align-items: center;
+        margin-top: 10px;
+        padding: 5px 0;
+      }
+
+      #prompt {
+        color: #fec456;
+        margin-right: 8px;
+      }
+
+      #cmd-input {
+        background: transparent;
+        border: none;
+        color: #d4d4d4;
+        font-family: "Consolas", monospace;
+        font-size: 16px;
+        outline: none;
+        flex-grow: 1;
+        caret-color: #fff;
+      }
+
+      .cursor {
+        display: inline-block;
+        width: 8px;
+        height: 15px;
+        background-color: #d4d4d4;
+        animation: blink 1s infinite;
+        vertical-align: middle;
+      }
+
+      @keyframes blink {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0;
+        }
+      }
+
+      ::-webkit-scrollbar {
+        width: 12px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: #1a1a1a;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: #3f3f3f;
+        border-radius: 6px;
+        border: 3px solid #1a1a1a;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+      }
+
+      ::selection {
+        background: #264f78;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="title-bar">
+      <div class="title-left">
+        <i class="fas fa-terminal window-icon"></i>
+        <span class="window-title">Command Prompt - hello_bethany.exe</span>
+      </div>
+      <div class="window-controls">
+        <button class="control-button minimize">
+          <i class="fas fa-minus"></i>
+        </button>
+        <button class="control-button maximize">
+          <i class="fas fa-square"></i>
+        </button>
+        <button class="control-button close">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+    </div>
+    <div class="terminal-content">
+      <div id="terminal">
+        <span class="system-text"
+          >Microsoft Windows [Version 10.0.19045.3803] (c) Microsoft
+          Corporation. All rights reserved. </span
+        ><span class="path-text">C:\Users\Dada\HelloBethany></span
+        ><span class="message-text">
+          Type 'run code' to start the program or 'help' for available
+          commands.
+        </span>
+      </div>
+      <div id="input-line">
+        <span id="prompt">C:\Users\Dada\HelloBethany> </span>
+        <input type="text" id="cmd-input" autofocus />
+      </div>
+    </div>
+
+    <script>
+      const terminal = document.getElementById("terminal");
+      const input = document.getElementById("cmd-input");
+      let confessionShown = false;
+
+      async function typeText(text, className, speed = 50) {
+        const span = document.createElement("span");
+        span.className = className;
+        terminal.appendChild(span);
+
+        for (let char of text) {
+          span.textContent += char;
+          await new Promise((resolve) => setTimeout(resolve, speed));
+          terminal.scrollTop = terminal.scrollHeight;
+        }
+      }
+
+      document.querySelector(".close").addEventListener("click", () => {
+        const confirmation = confirm(
+          "Are you sure you want to close this love confession?"
+        );
+        if (confirmation) {
+          window.close();
+        }
+      });
+
+      document.querySelector(".minimize").addEventListener("click", () => {
+        document.body.style.opacity = "0.5";
+        setTimeout(() => (document.body.style.opacity = "1"), 1000);
+      });
+
+      document.querySelector(".maximize").addEventListener("click", () => {
+        if (!document.fullscreenElement) {
+          document.documentElement.requestFullscreen();
+        } else {
+          document.exitFullscreen();
+        }
+      });
+
+      document
+        .querySelector(".terminal-content")
+        .addEventListener("click", () => {
+          input.focus();
+        });
+
+      input.addEventListener("keypress", async function (e) {
+        if (e.key === "Enter") {
+          const command = input.value.trim().toLowerCase();
+          terminal.innerHTML += `<span class="path-text">C:\\Users\\Dada\\HelloBethany> </span>${command}\n`;
+          input.value = "";
+
+          if (command === "run code" && !confessionShown) {
+            confessionShown = true;
+            await typeText("\nCompiling thoughts...\n", "loading-text");
+            await typeText("Loading feeling...\n", "loading-text");
+            await typeText("Gathering courage...\n\n", "loading-text");
+
+            await typeText("Dear Bethany,\n\n", "message-text");
+            await typeText(
+              "I hope this message doesn't come out of nowhere, but I just wanted to be honest about something.\n\n",
+              "message-text"
+            );
+            await typeText(
+              "I'm Daryl! Like you, I also graduated from PNS for high school and PSU for college.\n\n",
+              "code-block"
+            );
+            await typeText(
+              "We haven't really talked before, but I've heard about you from some of our mutual friends.\n\n",
+              "message-text"
+            );
+            await typeText(
+              "Over time, I started hearing more stories—how you're smart and capable,\n",
+              "code-block"
+            );
+            await typeText(
+              "kind but not weak, and how you bring so much energy and fun\n",
+              "code-block"
+            );
+            await typeText(
+              '("kwela" and "kalog" in the best way). ',
+              "code-block"
+            );
+            await typeText(
+              "And honestly, the more I heard, the more I found myself wanting to know you personally, beyond just stories.\n\n",
+              "message-text"
+            );
+            await typeText(
+              "I can tell that you're someone special, and to add to that,\n",
+              "message-text"
+            );
+            await typeText(
+              "I also think you're really pretty. 😊\n\n",
+              "heart-text"
+            );
+            await typeText(
+              "I'd love to take you out for coffee or dinner this Valentine's—\n",
+              "message-text"
+            );
+            await typeText(
+              "somewhere we can talk and get to know each other better.\n\n",
+              "code-block"
+            );
+            await typeText("What do you say? ", "message-text");
+            await typeText("❤️\n\n", "heart-text");
+            await typeText(
+              'Respond by typing "yes" or "no"...\n\n',
+              "loading-text"
+            );
+          } else if (
+            (command === "yes" || command === "no") &&
+            confessionShown
+          ) {
+            if (command === "yes") {
+              await typeText(
+                "\n❤️ Thank you! I'll make it special!\n",
+                "heart-text"
+              );
+              await typeText(
+                "I'll contact you soon with the details!\n\n",
+                "message-text"
+              );
+            } else {
+              await typeText(
+                "\nI understand. Thank you for being honest. ❤️\n",
+                "message-text"
+              );
+              await typeText(
+                "I really appreciate your sincerity.\n\n",
+                "message-text"
+              );
+            }
+            await typeText("Press any key to exit...\n", "system-text");
+            input.disabled = true;
+            input.style.display = "none";
+          } else if (command === "cls") {
+            terminal.innerHTML = "";
+          } else if (command === "help") {
+            terminal.innerHTML += createColoredSpan(
+              `
+Available commands:
+run code - Start the confession
+cls     - Clear screen
+help    - Show this help message
+`,
+              "system-text"
+            );
+          } else if (command !== "") {
+            terminal.innerHTML += createColoredSpan(
+              `'${command}' is not recognized as an internal or external command.\n`,
+              "error-text"
+            );
+          }
+
+          terminal.scrollTop = terminal.scrollHeight;
+        }
+      });
+
+      document
+        .querySelector(".window-controls")
+        .addEventListener("mouseup", (e) => {
+          e.stopPropagation();
+          setTimeout(() => input.focus(), 0);
+        });
+
+      function createColoredSpan(text, className) {
+        return `<span class="${className}">${text}</span>`;
+      }
+
+      input.focus();
+    </script>
+  </body>
+</html>
