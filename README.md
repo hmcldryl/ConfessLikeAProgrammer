@@ -238,6 +238,9 @@ https://your-username.github.io/ConfessLikeAProgrammer
 ├── index.html        # Page structure
 ├── style.css         # All the styles
 ├── script.js         # CONFIG (names, messages, Apps Script URL) + terminal logic
+├── favicon/          # Favicons + web app manifest
+├── CONTRIBUTING.md   # How to contribute
+├── LICENSE           # MIT License
 └── appscript/
     └── Code.gs       # Google Apps Script for email notifications
 ```
@@ -279,10 +282,12 @@ If you want to change the look, everything is in `style.css`. These are the CSS 
 
 Feel free to fork this project and use it for your own crush. Who knows, it might work for you too.
 
+Want to report a bug or improve something? See [CONTRIBUTING.md](CONTRIBUTING.md).
+
 ## License
 
 This project is open source and available under the [MIT License](LICENSE).
 
 ## Author
 
-Created with ❤️ by Daryll Homecillo
+Created with ❤️ by John Daryl Homecillo
