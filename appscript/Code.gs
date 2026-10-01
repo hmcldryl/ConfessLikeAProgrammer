@@ -1,13 +1,13 @@
 // =====================================================================
 //  ConfessLikeAProgrammer - Google Apps Script
-//  Ito yung magse-send ng email sa'yo pag sumagot na si crush.
+//  Sends you an email when your crush answers.
 // =====================================================================
 
-// Palitan mo 'to ng email mo (dito mo matatanggap yung sagot niya)
+// Replace with your email (this is where their answer will be sent)
 const YOUR_EMAIL = "your-email@gmail.com";
 
 // =====================================================================
-//  Wag mo na galawin yung nasa baba nito :)
+//  No need to touch anything below this line
 // =====================================================================
 
 function doPost(e) {

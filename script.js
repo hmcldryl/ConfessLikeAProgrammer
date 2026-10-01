@@ -1,5 +1,5 @@
 // =====================================================================
-//  CONFIG - ito lang yung kailangan mong palitan
+//  CONFIG - this is the only part you need to edit
 // =====================================================================
 //  Placeholders you can use inside any text below:
 //    {you}   -> replaced with yourName
@@ -8,7 +8,7 @@
 //  Available styles (colors):
 //    "message-text" - white, normal message
 //    "code-block"   - light blue
-//    "heart-text"   - pink, for kilig lines
+//    "heart-text"   - pink, for the sweet lines
 //    "loading-text" - sky blue, for "loading..." lines
 //    "system-text"  - teal, for system messages
 //    "path-text"    - yellow
@@ -30,12 +30,12 @@ const CONFIG = {
     { text: "Loading emotions...\n", style: "loading-text" },
     { text: "Gathering courage...\n\n", style: "loading-text" },
     { text: "Hi {crush},\n\n", style: "message-text" },
-    { text: "[Opening line mo dito. Example: I hope you're doing well. I've been meaning to say this for a while...]\n\n", style: "message-text" },
+    { text: "[Your opening line. Example: I hope you're doing well. I've been meaning to say this for a while...]\n\n", style: "message-text" },
     { text: "[Introduce yourself. Example: I'm {you}, ...]\n\n", style: "code-block" },
-    { text: "[Paano mo siya nakilala or bakit mo siya nagustuhan.]\n\n", style: "message-text" },
+    { text: "[How you know them or why you like them.]\n\n", style: "message-text" },
     { text: "[Something sweet about them.] 😊\n\n", style: "heart-text" },
     { text: "[Your invite. Example: I'd love to take you out for coffee or dinner this Valentine's—]\n", style: "message-text" },
-    { text: "[Example: somewhere we can chika and get to know each other better.]\n\n", style: "code-block" },
+    { text: "[Example: somewhere we can talk and get to know each other better.]\n\n", style: "code-block" },
     { text: "What do you say? ", style: "message-text" },
     { text: "❤️\n\n", style: "heart-text" },
     { text: '[Respond by typing "yes" or "no"]\n\n', style: "loading-text" },
@@ -54,7 +54,7 @@ const CONFIG = {
   ],
 };
 // =====================================================================
-//  Wag mo na galawin yung nasa baba nito unless alam mo ginagawa mo :)
+//  No need to touch anything below this line
 // =====================================================================
 
 const fill = (text) =>

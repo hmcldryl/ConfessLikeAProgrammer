@@ -1,8 +1,8 @@
 # ConfessLikeAProgrammer
 
-Ginawa ko 'to para mag confess sa crush ko. HAHAHAHA!
+I made this to confess to my crush.
 
-Basically, it's a fake Command Prompt (yung black na window sa Windows) na pag tinype ni crush yung `run code`, lalabas yung confession mo letter by letter, parang hacker movie. Tapos sasagot siya ng `yes` or `no`, and pwede ka pang makatanggap ng email kung ano sagot niya. 👀
+It's a fake Command Prompt (that black window on Windows). When your crush types `run code`, your confession shows up letter by letter, like a hacker movie. Then they answer `yes` or `no`, and you can even get an email telling you what they picked. 👀
 
 ## Live Demo
 
@@ -26,156 +26,156 @@ Visit [https://hmcldryl.github.io/ConfessLikeAProgrammer](https://hmcldryl.githu
 
 ---
 
-# 📖 Step-by-step Guide (kahit hindi ka IT/CS, kaya mo 'to!)
+# 📖 Step-by-step Guide (even if you're not into IT/CS, you got this!)
 
-Chill lang, walang kailangan i-install. Browser lang (Chrome, Edge, etc.) tsaka Gmail account. Mga 15–20 minutes lang 'to.
+No need to install anything. All you need is a browser (Chrome, Edge, etc.) and a Gmail account. This takes around 15–20 minutes.
 
-Ito yung gagawin natin:
+Here's what we'll do:
 
-1. Gagawa ng GitHub account (dito naka-save yung website mo)
-2. Kokopyahin yung project na 'to papunta sa account mo
-3. Ilalagay yung pangalan niyo tsaka yung message mo
-4. *(Optional)* I-setup yung email para malaman mo agad sagot niya
-5. I-publish yung website para may link ka na pwedeng i-send
-6. I-test, tapos send na kay crush!
+1. Create a GitHub account (this is where your website will live)
+2. Copy this project to your account
+3. Put in your names and your message
+4. *(Optional)* Set up email so you know their answer right away
+5. Publish the website so you get a link you can send
+6. Test it, then send it to your crush!
 
-> ⚠️ **Heads up:** Yung website at yung message mo ay **public**. Ibig sabihin, kahit sino na may link or maghanap sa GitHub account mo, makikita yung message. So wag kang maglagay ng sobrang personal na info (address, phone number, etc.).
+> ⚠️ **Heads up:** Your website and message are **public**. Anyone with the link, or anyone who looks at your GitHub account, can see the message. So don't put anything too personal in it (address, phone number, etc.).
 
 ---
 
-## Step 1: Gumawa ng GitHub account
+## Step 1: Create a GitHub account
 
-> Kung may GitHub account ka na, skip mo na 'to, go to Step 2.
+> Already have a GitHub account? Skip to Step 2.
 
-GitHub = parang Google Drive pero para sa code. Dito natin ilalagay yung website, tapos sila na din mag-ho-host nito for free.
+GitHub is like Google Drive, but for code. This is where we'll put the website, and GitHub will also host it for free.
 
-1. Punta ka sa [https://github.com/signup](https://github.com/signup).
-2. Ilagay yung email mo, gawa ng password, tapos pili ng **username**.
-   - Tip: Yung username mo ay makikita sa link ng website mo (e.g. `https://juandelacruz.github.io/...`), so pili ka ng hindi cringe. HAHAHA
-3. Sagutan yung puzzle/verification, tapos click **Create account**.
-4. Check mo email mo, may code silang isesend. I-type mo lang yun para ma-verify yung account.
-5. Kung may mga tanong sila (like "how many team members", etc.), pwede mo lang i-skip or piliin yung free/personal options.
+1. Go to [https://github.com/signup](https://github.com/signup).
+2. Enter your email, create a password, and pick a **username**.
+   - Tip: Your username will show up in your website's link (e.g. `https://juandelacruz.github.io/...`), so pick one you won't be embarrassed by.
+3. Solve the puzzle/verification, then click **Create account**.
+4. Check your email for a code from GitHub. Type it in to verify your account.
+5. If they ask you questions (like "how many team members"), you can skip them or pick the free/personal options.
 
-Done! May GitHub account ka na. 🎉
+Done! You now have a GitHub account. 🎉
 
-## Step 2: Kopyahin (Fork) yung project
+## Step 2: Copy (Fork) the project
 
-Ang "fork" ay basically kokopyahin mo yung project ko papunta sa account mo, para pwede mo siyang i-edit nang hindi naaapektuhan yung akin.
+"Forking" means copying my project into your own account, so you can edit it without touching mine.
 
-1. Make sure naka-login ka sa GitHub.
-2. Punta ka dito: [https://github.com/hmcldryl/ConfessLikeAProgrammer](https://github.com/hmcldryl/ConfessLikeAProgrammer)
-3. Sa upper right ng page, click mo yung **Fork** button.
-4. Sa next page, wag mo nang galawin yung settings. Click mo lang **Create fork**.
-5. Hintayin lang saglit. Pag tapos, mapupunta ka sa copy mo, makikita mo sa taas na `your-username/ConfessLikeAProgrammer`.
+1. Make sure you're logged in to GitHub.
+2. Go here: [https://github.com/hmcldryl/ConfessLikeAProgrammer](https://github.com/hmcldryl/ConfessLikeAProgrammer)
+3. In the upper right of the page, click the **Fork** button.
+4. On the next page, leave the settings as they are and click **Create fork**.
+5. Wait a few seconds. When it's done, you'll be on your copy. You'll see `your-username/ConfessLikeAProgrammer` at the top.
 
-## Step 3: Ilagay yung names at message mo
+## Step 3: Put in your names and message
 
-Lahat ng kailangan mong palitan ay nasa isang file lang: `script.js`.
+Everything you need to change is in one file: `script.js`.
 
-1. Sa fork mo (yung page na `your-username/ConfessLikeAProgrammer`), click mo yung file na **`script.js`**.
-2. Sa right side, click mo yung **pencil icon ✏️** (Edit this file).
-3. Sa pinakataas ng file, makikita mo yung `CONFIG`. Ito yung papalitan mo:
+1. In your fork (the `your-username/ConfessLikeAProgrammer` page), click the file **`script.js`**.
+2. On the right side, click the **pencil icon ✏️** (Edit this file).
+3. At the very top of the file, you'll see `CONFIG`. Change these:
 
    ```javascript
    yourName: "YOUR_NAME",
    crushName: "CRUSH_NAME",
    ```
 
-   Palitan mo yung nasa loob ng quotes `" "`. Example:
+   Replace what's inside the quotes `" "`. Example:
 
    ```javascript
    yourName: "Juan",
    crushName: "Maria",
    ```
 
-   > Tip: Mas okay kung isang word lang at walang space, kasi lalabas din 'to sa "folder path" sa screen (e.g. `C:\Users\Juan\HelloMaria>`).
+   > Tip: Use one word with no spaces, because the names also show up in the "folder path" on screen (e.g. `C:\Users\Juan\HelloMaria>`).
 
-4. Tapos sa baba, may `confession`, `yesReply`, at `noReply`. Dito mo ilalagay yung message mo. Bawat line ganito yung itsura:
+4. Below that are `confession`, `yesReply`, and `noReply`. This is where your message goes. Each line looks like this:
 
    ```javascript
-   { text: "Yung message mo dito\n\n", style: "message-text" },
+   { text: "Your message here\n\n", style: "message-text" },
    ```
 
-   - **`text`** — yung mismong message. Palitan mo lang yung nasa loob ng `[ ]`, tapos burahin mo na din yung `[ ]`.
-   - **`style`** — yung kulay ng text. Pwede mong gamitin:
-     - `"message-text"` - white, normal na message
+   - **`text`** — the message itself. Replace the parts inside `[ ]`, and delete the `[ ]` too.
+   - **`style`** — the color of the text. You can use:
+     - `"message-text"` - white, normal message
      - `"code-block"` - light blue
-     - `"heart-text"` - pink, para sa mga kilig lines 💕
-     - `"loading-text"` - sky blue, para sa "Loading..." vibes
-     - `"system-text"` - teal, parang system message
+     - `"heart-text"` - pink, for the sweet lines 💕
+     - `"loading-text"` - sky blue, for "Loading..." vibes
+     - `"system-text"` - teal, looks like a system message
      - `"path-text"` - yellow
      - `"error-text"` - red
-   - **`{crush}`** at **`{you}`** — automatic na mapapalitan ng pangalan niyo. So `"Hi {crush},"` magiging `"Hi Maria,"`.
-   - **`\n`** — ibig sabihin new line (enter). Yung **`\n\n`** naman ay new line + isang blank line.
+   - **`{crush}`** and **`{you}`** — automatically replaced with your names. So `"Hi {crush},"` becomes `"Hi Maria,"`.
+   - **`\n`** — means a new line (like pressing Enter). **`\n\n`** means a new line plus one blank line.
 
-   **Ingat lang sa ilang bagay** para di masira:
-   - Wag mong buburahin yung `"` sa start at end ng text.
-   - Kung gusto mong gumamit ng `"` sa loob ng message mo, gamitin mo nalang `'` (single quote) or lagyan mo ng backslash: `\"`.
-   - Wag mong kakalimutan yung comma `,` sa dulo ng bawat line.
-   - Pwede kang mag-add ng bagong line, i-copy mo lang yung buong `{ text: ..., style: ... },` tapos i-paste sa baba.
-   - Pwede ka din magbura ng line na di mo kailangan, burahin mo lang yung buong line.
+   **Be careful with a few things** so nothing breaks:
+   - Don't delete the `"` at the start and end of the text.
+   - If you want to use `"` inside your message, use `'` (single quote) instead, or add a backslash before it: `\"`.
+   - Don't forget the comma `,` at the end of each line.
+   - To add a new line, copy a whole `{ text: ..., style: ... },` line and paste it below.
+   - To remove a line you don't need, just delete the whole line.
 
-5. Pag tapos ka na, click mo yung green na **Commit changes...** button sa upper right, tapos **Commit changes** ulit sa popup. (Ang "commit" ay basically "save".)
+5. When you're done, click the green **Commit changes...** button in the upper right, then **Commit changes** again in the popup. ("Commit" basically means "save".)
 
-> Yung `scriptUrl` naman, babalikan natin yan sa Step 4.
+> We'll come back to `scriptUrl` in Step 4.
 
-## Step 4 (Optional): Email notification pag sumagot na siya
+## Step 4 (Optional): Get an email when they answer
 
-Kung gusto mong makatanggap ng email pag nag `yes` or `no` na siya, gawin mo 'to. Kung ayaw mo, skip mo na, go to Step 5. Gagana pa din yung website kahit wala 'to.
+If you want to get an email when they answer `yes` or `no`, do this step. If not, skip to Step 5. The website still works without it.
 
-Gagamit tayo ng **Google Apps Script** — free tool ni Google na pwedeng mag-send ng email for you.
+We'll use **Google Apps Script**, a free Google tool that can send emails for you.
 
-### 4.1 Gumawa ng Apps Script project
+### 4.1 Create an Apps Script project
 
-1. Punta ka sa [https://script.google.com](https://script.google.com) tapos login gamit yung Gmail mo.
-2. Click mo yung **New project** (upper left).
-3. May lalabas na editor na may laman na `function myFunction() { }`. **Burahin mo lahat** yan.
-4. Balik ka sa GitHub, open mo yung file na [`appscript/Code.gs`](appscript/Code.gs), tapos i-copy mo lahat ng laman. (May copy button sa upper right ng file, yung icon na dalawang square.)
-5. I-paste mo sa Apps Script editor.
-6. Hanapin mo 'tong line na 'to sa taas:
+1. Go to [https://script.google.com](https://script.google.com) and log in with your Gmail.
+2. Click **New project** (upper left).
+3. An editor will open with `function myFunction() { }` in it. **Delete all of it.**
+4. Go back to GitHub, open the file [`appscript/Code.gs`](appscript/Code.gs), and copy everything in it. (There's a copy button in the upper right of the file, the icon with two squares.)
+5. Paste it into the Apps Script editor.
+6. Find this line at the top:
 
    ```javascript
    const YOUR_EMAIL = "your-email@gmail.com";
    ```
 
-   Palitan mo ng email mo, dito mo kasi matatanggap yung sagot niya.
-7. Sa taas, click mo yung **Untitled project** para i-rename, e.g. `ConfessLikeAProgrammer`.
-8. Click mo yung **Save** icon 💾 (or `Ctrl + S`).
+   Replace it with your email. This is where their answer will be sent.
+7. At the top, click **Untitled project** to rename it, e.g. `ConfessLikeAProgrammer`.
+8. Click the **Save** icon 💾 (or press `Ctrl + S`).
 
-### 4.2 Bigyan ng permission yung script (i-test na din)
+### 4.2 Give the script permission (and test it)
 
-1. Sa toolbar sa taas, may dropdown katabi ng **Run** at **Debug**. Piliin mo yung **`testEmail`**.
-2. Click mo **Run**.
-3. Hihingi siya ng permission. Click **Review permissions**, tapos piliin yung Google account mo.
-4. Lalabas yung **"Google hasn't verified this app"**. Normal lang 'to, kasi ikaw mismo gumawa ng app, hindi pa siya na-review ni Google. Safe 'to kasi sa'yo lang 'tong script.
-   - Click mo **Advanced** (sa lower left).
-   - Click mo **Go to ConfessLikeAProgrammer (unsafe)**.
+1. In the toolbar at the top, there's a dropdown next to **Run** and **Debug**. Select **`testEmail`**.
+2. Click **Run**.
+3. It will ask for permission. Click **Review permissions**, then choose your Google account.
+4. You'll see **"Google hasn't verified this app"**. This is normal. You made the app yourself, so Google hasn't reviewed it. It's safe because the script is only yours.
+   - Click **Advanced** (lower left).
+   - Click **Go to ConfessLikeAProgrammer (unsafe)**.
    - Click **Allow**.
-5. Check mo yung Gmail mo, dapat may email ka na with subject **"ConfessLikeAProgrammer test"**. Kung meron, gumagana na! 🎉
+5. Check your Gmail. You should have an email with the subject **"ConfessLikeAProgrammer test"**. If it's there, it works! 🎉
 
-### 4.3 I-deploy as Web App
+### 4.3 Deploy it as a Web App
 
-Kailangan natin ng link para makausap ng website mo yung script na 'to.
+We need a link so your website can talk to this script.
 
-1. Sa upper right, click mo **Deploy** → **New deployment**.
-2. Sa tabi ng "Select type", click mo yung **gear icon ⚙️** → piliin **Web app**.
-3. I-setup mo ng ganito:
-   - **Description:** kahit ano, e.g. `v1`
+1. In the upper right, click **Deploy** → **New deployment**.
+2. Next to "Select type", click the **gear icon ⚙️** → choose **Web app**.
+3. Set it up like this:
+   - **Description:** anything, e.g. `v1`
    - **Execute as:** `Me (your-email@gmail.com)`
-   - **Who has access:** `Anyone` ← **important 'to**, kasi kung hindi, di ka makakatanggap ng email.
+   - **Who has access:** `Anyone` ← **this one is important**, otherwise you won't get any emails.
 4. Click **Deploy**.
-5. Ibibigay niya yung **Web app URL**, mukhang ganito: `https://script.google.com/macros/s/AKfy..../exec`. Click **Copy**.
+5. It will give you a **Web app URL** that looks like `https://script.google.com/macros/s/AKfy..../exec`. Click **Copy**.
 
-### 4.4 Ilagay yung URL sa website
+### 4.4 Put the URL in your website
 
-1. Balik ka sa GitHub fork mo, open mo ulit yung `script.js`, click mo yung pencil icon ✏️.
-2. Hanapin mo 'to:
+1. Go back to your GitHub fork, open `script.js` again, and click the pencil icon ✏️.
+2. Find this:
 
    ```javascript
    scriptUrl: "PASTE_YOUR_APPS_SCRIPT_URL_HERE",
    ```
 
-3. Palitan mo ng URL na kinopya mo (dapat nasa loob pa din ng quotes):
+3. Replace it with the URL you copied (keep the quotes):
 
    ```javascript
    scriptUrl: "https://script.google.com/macros/s/AKfy..../exec",
@@ -183,54 +183,54 @@ Kailangan natin ng link para makausap ng website mo yung script na 'to.
 
 4. Click **Commit changes...** → **Commit changes**.
 
-> **Note:** Kung babaguhin mo ulit yung code sa Apps Script in the future, kailangan mo siyang i-deploy ulit: **Deploy** → **Manage deployments** → pencil icon ✏️ → sa **Version** piliin **New version** → **Deploy**. Kung hindi, yung luma pa din yung tatakbo.
+> **Note:** If you change the Apps Script code later, you need to deploy it again: **Deploy** → **Manage deployments** → pencil icon ✏️ → under **Version** choose **New version** → **Deploy**. Otherwise the old version keeps running.
 
-Kung gusto mo pa magbasa about Apps Script:
+Want to read more about Apps Script?
 - [Apps Script Overview](https://developers.google.com/apps-script/overview)
 - [Web Apps guide](https://developers.google.com/apps-script/guides/web)
 - [GmailApp reference](https://developers.google.com/apps-script/reference/gmail/gmail-app)
 
-## Step 5: I-publish yung website (GitHub Pages)
+## Step 5: Publish the website (GitHub Pages)
 
-GitHub Pages = free hosting ni GitHub. Dito magkakaroon ng link yung website mo.
+GitHub Pages is GitHub's free hosting. This is what gives your website a link.
 
-1. Sa fork mo, click mo yung **Settings** tab (yung may gear icon ⚙️, nasa taas ng page).
-2. Sa left sidebar, click mo **Pages**.
-3. Sa **Build and deployment**, under **Source**, piliin mo **Deploy from a branch**.
-4. Under **Branch**, piliin mo **`main`** tapos **`/ (root)`**, then click **Save**.
-5. Hintayin mo mga 1–3 minutes. I-refresh mo yung page, tapos sa taas lalabas yung **"Your site is live at ..."**.
+1. In your fork, click the **Settings** tab (the one with the gear icon ⚙️ at the top of the page).
+2. In the left sidebar, click **Pages**.
+3. Under **Build and deployment** → **Source**, choose **Deploy from a branch**.
+4. Under **Branch**, choose **`main`** and **`/ (root)`**, then click **Save**.
+5. Wait about 1–3 minutes. Refresh the page, and you'll see **"Your site is live at ..."** at the top.
 
-Yung link mo ay magiging ganito:
+Your link will look like this:
 
 ```
 https://your-username.github.io/ConfessLikeAProgrammer
 ```
 
-> Kada may babaguhin ka sa files (Step 3 or 4.4), automatic na mag-u-update yung website after 1–3 minutes. Kung di pa nagbabago, try mo i-refresh with `Ctrl + Shift + R`.
+> Every time you change a file (Step 3 or 4.4), the website updates automatically after 1–3 minutes. If you don't see the change yet, refresh with `Ctrl + Shift + R`.
 
-## Step 6: I-test bago i-send!
+## Step 6: Test it before sending!
 
-1. Open mo yung link mo.
-2. Type `run code` tapos Enter. Basahin mo kung tama lahat ng message at walang typo. HAHAHA
-3. Type `yes` or `no` para ma-test yung ending.
-   - Kung naka-setup yung email (Step 4), dapat may email ka nang matatanggap in a few seconds.
-   - Kung gusto mong ulitin, i-refresh mo lang yung page.
-4. Kung okay na lahat, send mo na kay crush yung link! Good luck! 🍀
+1. Open your link.
+2. Type `run code` and press Enter. Read through the whole message and check for typos.
+3. Type `yes` or `no` to test the ending.
+   - If you set up email (Step 4), you should get an email within a few seconds.
+   - To try again, just refresh the page.
+4. If everything looks good, send the link to your crush! Good luck! 🍀
 
 ## Troubleshooting
 
-- **Blank yung page or walang lumalabas pag nag `run code`** — May mali sigurong na-edit sa `script.js`. Usually, kulang ng `"`, `,`, or may `"` sa loob ng message. Check mo ulit yung huling binago mo. Pwede mo din i-open yung website, press `F12`, tapos tingnan yung **Console** tab, nandun yung error kung saang line.
-- **404 / "There isn't a GitHub Pages site here"** — Hintay ka lang ng ilang minutes, tapos check mo ulit kung tama yung settings sa Step 5.
-- **Walang dumating na email** — Check mo:
-  - Tama ba yung email sa `YOUR_EMAIL`?
-  - Naka **Anyone** ba yung "Who has access" sa deployment?
-  - Tama at buo ba yung `scriptUrl` sa `script.js` (dapat nagtatapos sa `/exec`)?
-  - Check mo din yung Spam folder.
-  - Sa Apps Script, click mo yung **Executions** (sa left sidebar, yung icon na parang list) para makita kung may error.
+- **The page is blank, or nothing happens after `run code`** — Something in `script.js` probably got broken while editing. Usually it's a missing `"` or `,`, or a `"` inside your message. Check the last thing you changed. You can also open your website, press `F12`, and look at the **Console** tab to see which line has the error.
+- **404 / "There isn't a GitHub Pages site here"** — Wait a few more minutes, then double check the settings in Step 5.
+- **No email arrived** — Check that:
+  - The email in `YOUR_EMAIL` is correct.
+  - "Who has access" in the deployment is set to **Anyone**.
+  - The `scriptUrl` in `script.js` is correct and complete (it should end with `/exec`).
+  - It's not in your Spam folder.
+  - In Apps Script, click **Executions** (left sidebar, the list icon) to see if there are any errors.
 
 ---
 
-## Para sa mga techy 🤓
+## For the techy folks 🤓
 
 ### Project Structure
 
@@ -265,7 +265,7 @@ Then open `index.html` in your browser. No build step, no dependencies.
 
 ### Customization
 
-Kung gusto mo pang galawin yung itsura, nasa `style.css` lahat. Ito yung mga CSS classes para sa kulay ng text:
+If you want to change the look, everything is in `style.css`. These are the CSS classes for text colors:
 
 - `.system-text` - Teal, used for system messages
 - `.path-text` - Yellow, used for directory paths
@@ -277,7 +277,7 @@ Kung gusto mo pang galawin yung itsura, nasa `style.css` lahat. Ito yung mga CSS
 
 ## Contributing
 
-Fork niyo lang 'tong project, gamitin niyo din sa mga crushes niyo. Who knows baka magwork din kayo. HAHAHAHA
+Feel free to fork this project and use it for your own crush. Who knows, it might work for you too.
 
 ## License
 
